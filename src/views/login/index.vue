@@ -17,7 +17,8 @@
   
   <script setup>
   import { reactive } from 'vue'
-  
+  import { useRouter} from 'vue-router'
+  const router = useRouter()
   // do not use same name with ref
   const form = reactive({
     name: '',
@@ -31,7 +32,7 @@
   })
   
   const onSubmit = () => {
-    console.log('submit!')
+    router.push("/index")
   }
   </script>
 
