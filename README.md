@@ -45,3 +45,9 @@ import 'element-plus/dist/index.css'
 
 createApp(App).use(ElementPlus).mount('#app')
 ```
+
+
+### 5. 安装路由 
+```
+    npm install vue-router@4
+```
