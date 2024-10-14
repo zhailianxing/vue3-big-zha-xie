@@ -11,14 +11,29 @@ const routes = [
         component: () => import("../views/login") 
     },
     {
-        path: "/products",
-        name: 'products',
-        component: () => import("../views/products")
-    },
-    {
-        path: "/profile",  // TODO: 地址管理、个人信息、订单管理
-        name: 'profile',
-        component: () => import("../views/profile")
+        path: "/index",
+        name: 'index',
+        component: () => import("../views/layout"), // 公用layout的布局(用的container容器)
+        children: [
+            {
+                path: "/products",
+                name: 'products',
+                component: () => import("../views/products"),
+                meta: {
+                    showMenuEnable: true,
+                    title: "商品列表"
+                }
+            },
+            {
+                path: "/profile",  // TODO: 地址管理、个人信息、订单管理
+                name: 'profile',
+                component: () => import("../views/profile"),
+                meta: {
+                    showMenuEnable: true,
+                    title: "个人中心"
+                }
+            }
+        ]
     }
 ]
 
